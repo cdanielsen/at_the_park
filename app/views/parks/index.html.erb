@@ -4,13 +4,21 @@
     <h1>Who's at the Park?</h1>
   </div>
   <div class='row' id='body'>
-    <div column='col-xs-6'>
-      <h2>Park List</h2>
-        <ul>
-          <% @parks.all.each do |park| %>
-            <li><%= park.name %></li>
-          <% end %>
-        </ul>
+    <div column='col-xs-4'>
+      <h2>Parks</h2>
+      <ul>
+        <% @parks.all.each do |park| %>
+          <li><%= park.name %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div column='col-xs-4'>
+      <h2>Users</h2>
+      <ul>
+        <% @users.all.each do |user| %>
+          <li><%= user.name %></li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>
