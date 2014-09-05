@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  database: at_the_park_development
+
+test:
+  adapter: postgresql
+  database: at_the_park_test
