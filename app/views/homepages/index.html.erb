@@ -1,2 +1,16 @@
 <% content_for(:title, "Home | Who's at the Park?") %>
-<h1>Who's at the Park?</h1>
+<div class='container'>
+  <div class='row' id='header'>
+    <h1>Who's at the Park?</h1>
+  </div>
+  <div class='row' id='body'>
+    <div column='col-xs-6'>
+      <h2>Park List</h2>
+        <ul>
+          <% @parks.all.each do |park| %>
+            <li><%= park.name %></li>
+          <% end %>
+        </ul>
+    </div>
+  </div>
+</div>
