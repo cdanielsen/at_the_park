@@ -12,3 +12,10 @@
     <li><h4>Fenced? <strong>No</strong></h4></li>
   <% end %>
 </ul>
+
+<p><a href="/parks/<%= @park.id %>/edit" class="btn btn-primary">Edit Park</a></p>
+<p><a href="/parks/<%= @park.id %>"
+      data-confirm="You sure?"
+      data-method="delete"
+      rel="nofollow"
+      class="btn btn-danger">Delete Park</a></p>

@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   match('parks/:id', {via: :get, to: 'parks#show'})
   match('parks/:id/edit', {via: :get, to: 'parks#edit'})
   match('parks/:id', {via: [:patch, :put], to: 'parks#update'})
+  match('parks/:id', {via: :delete, to: 'parks#destroy'})
 
 end

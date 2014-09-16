@@ -39,5 +39,10 @@ class ParksController < ApplicationController
     end
   end
 
-
+  def destroy
+    @park = Park.find(params[:id])
+    @park.destroy
+    flash[:alert] = "Park deleted!"
+    redirect_to '/parks'
+  end
 end
