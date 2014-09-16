@@ -12,11 +12,11 @@
       </div>
       <div class="form-group">
         <%= f.label "Off-leash?" %>
-        <%= check_box :off_leash, class: 'form-control' %>
+        <%= f.check_box :off_leash %>
       </div>
       <div class="form-group">
         <%= f.label "Fenced area?" %>
-        <%= check_box :fenced, class: 'form-control' %>
+        <%= f.check_box :fenced %>
       </div>
       <%= f.submit(class: "btn btn-primary") %>
     <% end %>

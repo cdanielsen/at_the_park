@@ -11,4 +11,13 @@ class ParksController < ApplicationController
     render('parks/new')
   end
 
+  def create
+    @park = Park.new(params[:park])
+    if @park.save
+      redirect_to '/parks'
+    else
+      render 'parks/new'
+    end
+  end
+
 end
