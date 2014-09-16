@@ -1,0 +1,14 @@
+<h1>What's the word at <%= @park.name %>?</h1>
+<ul>
+  <li><h4>Location: <%= @park.location %></h4></li>
+  <% if @park.off_leash == true %>
+    <li><h4>Off Leash Area? <strong>Yes!</strong></h4></li>
+  <% else %>
+    <li><h4>Off Leash Area? <strong>No</strong></h4></li>
+  <% end %>
+  <% if @park.fenced == true %>
+    <li><h4>Fenced? <strong>Yes!</strong></h4></li>
+  <% else %>
+    <li><h4>Fenced? <strong>No</strong></h4></li>
+  <% end %>
+</ul>

@@ -8,7 +8,7 @@
       <h2>Parks</h2>
       <ul>
         <% @parks.all.each do |park| %>
-          <li><%= park.name %></li>
+          <li><%= link_to "#{park.name}", "parks/#{park.id}" %></li>
         <% end %>
       </ul>
     </div>

@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   match('parks', {via: :get, to: 'parks#index'})
   match('parks/new', {via: :get, to: 'parks#new'})
   match('parks', {via: :post, to: 'parks#create'})
+  match('parks/:id', {via: :get, to: 'parks#show'})
+
 end

@@ -20,4 +20,8 @@ class ParksController < ApplicationController
     end
   end
 
+  def show
+    @park = Park.find(params[:id])
+    render 'parks/show'
+  end
 end
