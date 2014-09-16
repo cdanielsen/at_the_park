@@ -24,4 +24,20 @@ class ParksController < ApplicationController
     @park = Park.find(params[:id])
     render 'parks/show'
   end
+
+  def edit
+    @park = Park.find(params[:id])
+    render 'parks/edit'
+  end
+
+  def update
+    @park = Park.find(params[:id])
+    if @park.update(params[:park])
+      redirect_to "/parks/#{@park.id}"
+    else
+      render 'parks/edit'
+    end
+  end
+
+
 end
