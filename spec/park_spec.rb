@@ -5,4 +5,5 @@ describe Park do
   it { should validate_presence_of :location }
 
   it { should have_many :users }
+  it { should have_many :dogs }
 end

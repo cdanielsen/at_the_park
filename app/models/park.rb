@@ -5,5 +5,6 @@ class Park < ActiveRecord::Base
 
   has_many :visits
   has_many :users, through: :visits
+  has_many :dogs, through: :users
 
 end
