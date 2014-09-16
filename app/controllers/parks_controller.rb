@@ -6,4 +6,9 @@ class ParksController < ApplicationController
     render('parks/index')
   end
 
+  def new
+    @park = Park.new
+    render('parks/new')
+  end
+
 end
