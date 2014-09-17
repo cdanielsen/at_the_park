@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   match('users/:id/edit', {via: :get, to: 'users#edit'})
   match('users/:id', {via: :get, to: 'users#show'})
   match('users/:id', {via: [:patch, :put], to: 'users#update'})
+  match('users/:id', {via: :delete, to: 'users#destroy'})
 
 
   resources :dogs do

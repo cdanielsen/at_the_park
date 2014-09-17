@@ -13,3 +13,8 @@
   <% end %>
 </ul>
 <p><a href="/users/<%= @user.id %>/edit" class="btn btn-primary">Edit User</a></p>
+<p><a href="/users/<%= @user.id %>"
+      data-confirm="You're about to delete a user. Are you sure?"
+      data-method="delete"
+      rel="nofollow"
+      class="btn btn-danger">Delete User</a></p>
