@@ -1,6 +1,6 @@
 <div class = "row">
   <div class = "col-md-4">
-    <h1>Edit a park</h1>
+    <h1>Edit park</h1>
     <%= render('layouts/errors', :object => @park) %>
     <form action="/parks/<%= @park.id %>" role="form" method="post">
       <input name="_method" type="hidden" value="patch">
@@ -22,7 +22,7 @@
         <input name="park[fenced]" type="hidden" value="0">
         <input <%= "checked" if @park.fenced %> id="park_fenced" name="park[fenced]" type="checkbox" value="1">
       </div>
-      <button type="submit" class="btn btn-primary">Edit park</button>
+      <button type="submit" class="btn btn-primary">Update park</button>
     </form>
   </div>
 </div>

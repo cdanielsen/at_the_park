@@ -25,4 +25,18 @@ class UsersController < ApplicationController
     render 'users/show'
   end
 
+  def edit
+    @user = User.find(params[:id])
+    render 'users/edit'
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update(params[:user])
+      flash[:notice] = "#{@user.name} updated successfully!"
+      redirect_to "/users/#{@user.id}"
+    else
+      render 'users/edit'
+    end
+  end
 end
