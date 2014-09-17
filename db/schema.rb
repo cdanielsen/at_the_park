@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140916221201) do
+ActiveRecord::Schema.define(version: 20140917171057) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,18 +28,18 @@ ActiveRecord::Schema.define(version: 20140916221201) do
   create_table "parks", force: true do |t|
     t.string   "name"
     t.string   "location"
-    t.boolean  "off_leash",  default: false
-    t.boolean  "fenced",     default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "off_leash"
+    t.boolean  "fenced"
   end
 
   create_table "users", force: true do |t|
     t.string   "name"
-    t.string   "gender",     default: "Not Given"
-    t.integer  "age",        default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "gender"
+    t.integer  "age"
   end
 
   create_table "visits", force: true do |t|

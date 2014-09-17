@@ -1,0 +1,12 @@
+<% content_for(:title, "Users | Who's at the Park?") %>
+<div class='row'>
+  <div class='col-md-6'>
+    <h2>Users</h2>
+    <ul>
+      <% @users.all.each do |user| %>
+        <li><%= user.name %></li>
+      <% end %>
+    </ul>
+    <%= link_to "Create New", "/users/new", class: "btn btn-info" %>
+  </div>
+</div>
