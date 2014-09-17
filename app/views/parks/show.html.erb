@@ -1,23 +1,34 @@
 <% content_for(:title, "#{@park.name} | @ThePark!") %>
+<div class='row'>
+  <div class='col-md-6'>
+    <h1>What's the word at <%= @park.name %>?</h1>
+    <ul>
+      <li><h4>Location: <%= @park.location %></h4></li>
+      <% if @park.off_leash == true %>
+        <li><h4>Off Leash Area? <strong>Yes!</strong></h4></li>
+      <% else %>
+        <li><h4>Off Leash Area? <strong>No</strong></h4></li>
+      <% end %>
+      <% if @park.fenced == true %>
+        <li><h4>Fenced? <strong>Yes!</strong></h4></li>
+      <% else %>
+        <li><h4>Fenced? <strong>No</strong></h4></li>
+      <% end %>
+    </ul>
 
-<h1>What's the word at <%= @park.name %>?</h1>
-<ul>
-  <li><h4>Location: <%= @park.location %></h4></li>
-  <% if @park.off_leash == true %>
-    <li><h4>Off Leash Area? <strong>Yes!</strong></h4></li>
-  <% else %>
-    <li><h4>Off Leash Area? <strong>No</strong></h4></li>
-  <% end %>
-  <% if @park.fenced == true %>
-    <li><h4>Fenced? <strong>Yes!</strong></h4></li>
-  <% else %>
-    <li><h4>Fenced? <strong>No</strong></h4></li>
-  <% end %>
-</ul>
-
-<p><a href="/parks/<%= @park.id %>/edit" class="btn btn-primary">Edit Park</a></p>
-<p><a href="/parks/<%= @park.id %>"
-      data-confirm="You're about to delete a park! Are you sure?"
-      data-method="delete"
-      rel="nofollow"
-      class="btn btn-danger">Delete Park</a></p>
+    <p><a href="/parks/<%= @park.id %>/edit" class="btn btn-primary">Edit Park</a></p>
+    <p><a href="/parks/<%= @park.id %>"
+          data-confirm="You're about to delete a park! Are you sure?"
+          data-method="delete"
+          rel="nofollow"
+          class="btn btn-danger">Delete Park</a></p>
+  </div>
+  <div class='col-md-6'>
+    <h1>Who's checked in?</h1>
+      <ul>
+        <% @visits.each do |visit| %>
+          <li><%= link_to visit.user.name, "/users/#{visit.user.id}" %> @ <%= visit.user.created_at.strftime("%H:%M") %></li>
+        <% end %>
+      </ul>
+  </div>
+</div>

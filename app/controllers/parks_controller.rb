@@ -22,6 +22,7 @@ class ParksController < ApplicationController
   end
 
   def show
+    @visits = Visit.visits(params[:id])
     @park = Park.find(params[:id])
     render 'parks/show'
   end
