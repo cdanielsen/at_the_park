@@ -1,22 +1,38 @@
 <% content_for(:title, "#{@user.name} | @ThePark!") %>
+<div class="row">
+  <div class="col-md-4">
+    <h1><%= @user.name %></h1>
+    <h3>Stats:</h3>
+    <ul>
+      <% if @user.age != 0 %>
+        <li><%= @user.age %></li>
+      <% else %>
+        <li>Not given</li>
+      <% end %>
+      <% if !@user.gender.empty? %>
+        <li><%= @user.gender %></li>
+      <% else %>
+        <li>Not given</li>
+      <% end %>
+    </ul><br/>
 
-<h1><%= @user.name %></h1>
-<h3>Stats:</h3>
-<ul>
-  <% if @user.age != 0 %>
-    <li><%= @user.age %></li>
-  <% else %>
-    <li>Not given</li>
-  <% end %>
-  <% if !@user.gender.empty? %>
-    <li><%= @user.gender %></li>
-  <% else %>
-    <li>Not given</li>
-  <% end %>
-</ul>
-<p><a href="/users/<%= @user.id %>/edit" class="btn btn-primary">Edit User</a></p>
-<p><a href="/users/<%= @user.id %>"
-      data-confirm="You're about to delete a user. Are you sure?"
-      data-method="delete"
-      rel="nofollow"
-      class="btn btn-danger">Delete User</a></p>
+    <form role="form" action="/visits", method="post">
+      <div class="form-group">
+        <select name="visit[park_id]" class="form-control">
+          <% @parks.each do |park| %>
+            <option value="<%= park.id %>"><%= park.name %></option>
+          <% end %>
+        </select>
+        <input type="hidden" name="visit[user_id]" value="<%= @user.id %>"><br/>
+        <button type="submit" class="btn btn-info">Check-in!</button>
+      </div>
+    </form>
+
+    <p><a href="/users/<%= @user.id %>/edit" class="btn btn-primary">Edit User</a></p>
+    <p><a href="/users/<%= @user.id %>"
+          data-confirm="You're about to delete a user. Are you sure?"
+          data-method="delete"
+          rel="nofollow"
+          class="btn btn-danger">Delete User</a></p>
+  </div>
+</div>

@@ -18,4 +18,6 @@ Rails.application.routes.draw do
   match('users/:id', {via: [:patch, :put], to: 'users#update'})
   match('users/:id', {via: :delete, to: 'users#destroy'})
 
+  match('visits', {via: :post, to: 'visits#create'})
+
 end
