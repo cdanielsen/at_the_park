@@ -5,7 +5,7 @@
 
 This program was written as an assessment of a basic rails application for Epicodus Summer 2014.
 
-Visit a * [live version] (http://nameless-anchorage-3235.herokuapp.com/) based on Portland, OR area parks on Heroku!
+Visit a * [live version] (http://at-the-park.herokuapp.com/) based on Portland, OR area parks on Heroku!
 
 ##Author:
 
