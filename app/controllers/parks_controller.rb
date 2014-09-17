@@ -14,6 +14,7 @@ class ParksController < ApplicationController
   def create
     @park = Park.new(params[:park])
     if @park.save
+      flash[:notice] = "New Park '#{@park.name}' created!"
       redirect_to '/parks'
     else
       render 'parks/new'
@@ -33,6 +34,7 @@ class ParksController < ApplicationController
   def update
     @park = Park.find(params[:id])
     if @park.update(params[:park])
+      flash[:notice] = "#{@park.name} updated successfully!"
       redirect_to "/parks/#{@park.id}"
     else
       render 'parks/edit'
