@@ -1,3 +1,5 @@
+<% content_for(:title, "#{@park.name} | @ThePark!") %>
+
 <h1>What's the word at <%= @park.name %>?</h1>
 <ul>
   <li><h4>Location: <%= @park.location %></h4></li>
@@ -15,7 +17,7 @@
 
 <p><a href="/parks/<%= @park.id %>/edit" class="btn btn-primary">Edit Park</a></p>
 <p><a href="/parks/<%= @park.id %>"
-      data-confirm="You sure?"
+      data-confirm="You're about to delete a park! Are you sure?"
       data-method="delete"
       rel="nofollow"
       class="btn btn-danger">Delete Park</a></p>

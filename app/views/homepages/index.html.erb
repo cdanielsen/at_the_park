@@ -1,9 +1,8 @@
-<% content_for(:title, "Parks | @ThePark!") %>
-
+<% content_for(:title, "Home | Who's at the Park?") %>
 <div class='container'>
   <div class='row text-center'>
     <div class="col-md-12">
-      <h1>Current Parks</h1>
+      <h1>Who's at the Park?</h1>
     </div>
   </div>
   <div class="row">
@@ -14,7 +13,9 @@
           <li><%= link_to "#{park.name}", "/parks/#{park.id}" %></li>
         <% end %>
       </ul>
-      <%= link_to "Create New", "/parks/new", class: "btn btn-info" %>
+    </div>
+    <div class='col-md-6'>
+      <!-- render visits here? -->
     </div>
   </div>
 </div>
