@@ -1,0 +1,16 @@
+<%= form_for [@user, @dog] do |f| %>
+  <div class="form-group">
+    <%= f.label "Name" %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label "Age (optional)" %>
+    <%= f.text_field :age, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label "Breed (optional)" %>
+    <%= f.text_field :breed, class: 'form-control' %>
+  </div>
+<%= f.submit(class: "btn btn-primary") %>
+<% end %>
+

@@ -14,5 +14,10 @@
         <li>Not given</li>
       <% end %>
     </ul><br/>
+    <p><%= link_to "Update info", edit_user_dog_path(@user, @dog), class: "btn btn-primary" %>
+    <p><%= link_to "Delete dog", user_dog_path(@user, @dog), data: { confirm: "You're about to delete a dog! Are you sure?",
+                                                                  method: "delete"},
+                                                                  class: "btn btn-danger" %>
+
   </div>
 </div>

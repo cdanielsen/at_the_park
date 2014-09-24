@@ -22,6 +22,29 @@ class DogsController < ApplicationController
     @dog = Dog.find(params[:id])
   end
 
+  def edit
+    @user = User.find(params[:user_id])
+    @dog = Dog.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:user_id])
+    @dog = Dog.find(params[:id])
+    if @dog.update(dog_params)
+      flash[:notice] = "#{@dog.name} info updated!"
+      redirect_to user_dog_path(@user, @dog)
+    else
+      render edit_user_dog_path(@user, @dog)
+    end
+  end
+
+  def destroy
+    @user = User.find(params[:user_id])
+    @dog = Dog.find(params[:id])
+    @dog.destroy
+    flash[:alert] = "#{@dog.name} is no more =("
+    redirect_to user_dog_path(@user, @dog)
+  end
 
 private
   def dog_params
