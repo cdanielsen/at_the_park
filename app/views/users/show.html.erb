@@ -1,7 +1,7 @@
 <% content_for(:title, "#{@user.name} | @ThePark!") %>
 <div class="row">
-  <div class="col-md-4">
-    <h1><%= @user.name %></h1>
+  <div class="col-md-4 col-md-offset-1">
+    <h2><%= @user.name %></h2>
     <ul>
       <% if @user.age != 0 %>
         <li><%= @user.age %></li>
@@ -21,18 +21,26 @@
           data-confirm="You're about to delete a user. Are you sure?"
           data-method="delete"
           rel="nofollow"
-          class="btn btn-danger">Delete User</a></p><br/>
-    <h1>Check In</h1>
+          class="btn btn-danger">Delete User</a></p>
+    <p><%= link_to "Add new dog", new_user_dog_path(@user), class: "btn btn-info" %></p><br/>
+    <h2>Check In @</h2>
     <form role="form" action="/visits", method="post">
       <div class="form-group">
         <select name="visit[park_id]" class="form-control">
           <% @parks.each do |park| %>
-            <option value="<%= park.id %>"><%= park.name %></option>
+            <option value="<%= park.id %>" class="form-control"><%= park.name %></option>
           <% end %>
         </select>
         <input type="hidden" name="visit[user_id]" value="<%= @user.id %>"><br/>
         <button type="submit" class="btn btn-info">Check-in!</button>
       </div>
     </form>
+  </div>
+  <div class="col-md-4 col-md-offset-2">
+    <h2>And their dogs...</h2>
+    <ul><% @user.dogs.each do |dog| %>
+      <li><%= link_to dog.name, user_dog_path(@user, dog) %></li>
+      <% end %>
+    </ul>
   </div>
 </div>

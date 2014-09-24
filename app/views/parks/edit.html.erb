@@ -2,7 +2,7 @@
 
 <div class = "row">
   <div class = "col-md-4">
-    <h1>Edit park</h1>
+    <h2>Edit park</h2>
     <%= render('layouts/errors', :object => @park) %>
     <form action="/parks/<%= @park.id %>" role="form" method="post">
       <input name="_method" type="hidden" value="patch">

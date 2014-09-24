@@ -1,0 +1,18 @@
+<% content_for(:title, "#{@dog.name} | @ThePark!") %>
+<div class="row">
+  <div class="col-md-4 col-md-offset-1">
+    <h2><%= @dog.name %></h2>
+    <ul>
+      <% if @dog.age != 0 %>
+        <li><%= @dog.age %></li>
+      <% else %>
+        <li>Not given</li>
+      <% end %>
+      <% if !@dog.breed.empty? %>
+        <li><%= @dog.breed %></li>
+      <% else %>
+        <li>Not given</li>
+      <% end %>
+    </ul><br/>
+  </div>
+</div>

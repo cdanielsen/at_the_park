@@ -38,4 +38,41 @@ a.unstyled-link {
   color: black;
 }
 
+.btn {
+  width: 150px;
+}
 
+h1 {
+  font-family: 'Permanent Marker', 'cursive';
+  font-weight: bold;
+  font-size: 60px;
+}
+
+h2 {
+  font-family: 'Permanent Marker', 'cursive';
+  font-size: 45px;
+}
+
+h3 {
+  font-family: 'Permanent Marker', 'cursive';
+  font-size: 25px;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  color: #52B3D9;
+  list-style: none;
+  font-family: 'Permanent Marker', 'cursive';
+  font-weight: bold;
+  font-size: 25px;
+}
+
+hr {
+  background-color: #eee;
+  border: 0 none;
+  color: #eee;
+  height: 2px;
+}

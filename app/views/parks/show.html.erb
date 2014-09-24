@@ -1,7 +1,7 @@
 <% content_for(:title, "#{@park.name} | @ThePark!") %>
 <div class='row'>
   <div class='col-md-4 col-md-offset-2'>
-    <h1>@<%= @park.name %></h1>
+    <h2>@<%= @park.name %></h2>
     <ul>
       <li><h4>Location: <%= @park.location %></h4></li>
       <% if @park.off_leash == true %>
@@ -24,10 +24,15 @@
           class="btn btn-danger">Delete Park</a></p>
   </div>
   <div class='col-md-4'>
-    <h1>Who's checked in?</h1>
+    <h2>Who's checked in?</h2>
       <ul>
         <% @visits.each do |visit| %>
-          <li><%= link_to visit.user.name, "/users/#{visit.user.id}" %> @ <%= visit.user.created_at.strftime("%H:%M") %></li>
+          <% visit.user.dogs.each do |dog| %>
+            <li><%= link_to dog.name, user_dog_path(dog.user, dog) %></li>
+          <% end %>
+          <li><h4>(with human)</h4></li>
+          <li><%= link_to visit.user.name, user_path(visit.user) %> @ <%= visit.user.created_at.strftime("%H:%M") %></li>
+          <hr>
         <% end %>
       </ul>
   </div>
