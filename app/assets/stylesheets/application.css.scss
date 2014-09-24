@@ -15,7 +15,27 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Permanent+Marker);
 
 .error_messages {
   color: red;
 }
+
+.header {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-family: 'Permanent Marker', 'cursive';
+  font-weight: bold;
+  font-size: 80px;
+}
+
+.city-name {
+  color: #27ae60;
+}
+
+a.unstyled-link {
+  text-decoration: none;
+  color: black;
+}
+
+

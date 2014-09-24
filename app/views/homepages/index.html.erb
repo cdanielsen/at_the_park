@@ -1,12 +1,7 @@
-<% content_for(:title, "Home | Who's at the Park?") %>
+<% content_for(:title, "Home | @ThePark!") %>
 <div class='container'>
-  <div class='row text-center'>
-    <div class="col-md-12">
-      <h1>Who's at the Park?</h1>
-    </div>
-  </div>
   <div class="row">
-    <div class='col-md-6'>
+    <div class='col-md-3 col-md-offset-3'>
       <h2>Parks</h2>
       <ul>
         <% @parks.all.each do |park| %>
@@ -14,8 +9,13 @@
         <% end %>
       </ul>
     </div>
-    <div class='col-md-6'>
-      <!-- render visits here? -->
+    <div class='col-md-3'>
+      <h2>Users</h2>
+      <ul>
+        <% @users.all.each do |user| %>
+          <li><%= link_to "#{user.name}", "/users/#{user.id}" %></li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>

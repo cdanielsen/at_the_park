@@ -2,7 +2,6 @@
 <div class="row">
   <div class="col-md-4">
     <h1><%= @user.name %></h1>
-    <h3>Stats:</h3>
     <ul>
       <% if @user.age != 0 %>
         <li><%= @user.age %></li>
@@ -16,6 +15,14 @@
       <% end %>
     </ul><br/>
 
+
+    <p><a href="/users/<%= @user.id %>/edit" class="btn btn-primary">Edit User</a></p>
+    <p><a href="/users/<%= @user.id %>"
+          data-confirm="You're about to delete a user. Are you sure?"
+          data-method="delete"
+          rel="nofollow"
+          class="btn btn-danger">Delete User</a></p><br/>
+    <h1>Check In</h1>
     <form role="form" action="/visits", method="post">
       <div class="form-group">
         <select name="visit[park_id]" class="form-control">
@@ -27,12 +34,5 @@
         <button type="submit" class="btn btn-info">Check-in!</button>
       </div>
     </form>
-
-    <p><a href="/users/<%= @user.id %>/edit" class="btn btn-primary">Edit User</a></p>
-    <p><a href="/users/<%= @user.id %>"
-          data-confirm="You're about to delete a user. Are you sure?"
-          data-method="delete"
-          rel="nofollow"
-          class="btn btn-danger">Delete User</a></p>
   </div>
 </div>

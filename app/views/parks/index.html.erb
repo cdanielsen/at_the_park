@@ -1,14 +1,9 @@
 <% content_for(:title, "Parks | @ThePark!") %>
 
 <div class='container'>
-  <div class='row text-center'>
-    <div class="col-md-12">
-      <h1>Current Parks</h1>
-    </div>
-  </div>
   <div class="row">
-    <div class='col-md-6'>
-      <h2>Parks</h2>
+    <div class='col-md-6 col-md-offset-3'>
+      <h2>Current Parks</h2>
       <ul>
         <% @parks.all.each do |park| %>
           <li><%= link_to "#{park.name}", "/parks/#{park.id}" %></li>

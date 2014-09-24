@@ -1,7 +1,7 @@
 <% content_for(:title, "#{@park.name} | @ThePark!") %>
 <div class='row'>
-  <div class='col-md-6'>
-    <h1>What's the word at <%= @park.name %>?</h1>
+  <div class='col-md-4 col-md-offset-2'>
+    <h1>@<%= @park.name %></h1>
     <ul>
       <li><h4>Location: <%= @park.location %></h4></li>
       <% if @park.off_leash == true %>
@@ -23,7 +23,7 @@
           rel="nofollow"
           class="btn btn-danger">Delete Park</a></p>
   </div>
-  <div class='col-md-6'>
+  <div class='col-md-4'>
     <h1>Who's checked in?</h1>
       <ul>
         <% @visits.each do |visit| %>
