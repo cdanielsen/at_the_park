@@ -48,3 +48,5 @@ class UsersController < ApplicationController
     redirect_to '/users'
   end
 end
+
+# refactor to use strong params!
