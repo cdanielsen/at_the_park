@@ -2,10 +2,13 @@
   <div class="col-md-12">
     <h1 class="header"><a href='/' class='unstyled-link'>@ThePark! <span class="city-name">PDX</span></a></h1>
     <ul class="nav-header nav">
-        <li><%= link_to "Signup", new_user_registration_path %></li>
-        <li><%= link_to "New Park", new_park_path %></li>
-        <!-- <li></li> -->
-        <!-- <li></li> -->
+      <% if user_signed_in? %>
+        <li>Signed in as: <%= link_to current_user.name, user_path(current_user) %></li>
+        <li><%= link_to "Log Out", destroy_user_session_path, data: {method: :delete} %></li>
+      <% else %>
+        <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        <li><%= link_to "Log In", new_user_session_path %></li>
+      <% end %>
     </ul>
     <hr>
   </div>
