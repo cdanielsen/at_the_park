@@ -11,15 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140925175005) do
+ActiveRecord::Schema.define(version: 20140925204433) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "dogs", force: true do |t|
     t.string   "name"
-    t.string   "breed",                 default: "Not Given"
-    t.integer  "age",                   default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
@@ -27,6 +25,9 @@ ActiveRecord::Schema.define(version: 20140925175005) do
     t.string   "headshot_content_type"
     t.integer  "headshot_file_size"
     t.datetime "headshot_updated_at"
+    t.string   "breed"
+    t.integer  "age"
+    t.text     "bio"
   end
 
   create_table "parks", force: true do |t|
@@ -48,7 +49,20 @@ ActiveRecord::Schema.define(version: 20140925175005) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.string   "email",                  default: "", null: false
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "visits", force: true do |t|
     t.integer  "park_id"

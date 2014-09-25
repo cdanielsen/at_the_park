@@ -9,11 +9,11 @@
         <% end %>
       </ul>
     </div>
-    <div class='col-md-3'>
+    <div class='col-md-6'>
       <h2>Users</h2>
       <ul>
         <% @users.all.each do |user| %>
-          <li class="object-list"><%= image_tag user.avatar.url(:tiny) %><%= link_to "#{user.name}", "/users/#{user.id}" %></li>
+          <li class="object-list"><%= link_to( image_tag(user.avatar.url(:tiny)), user_path(user), class: 'img-circle') %><%= link_to "#{user.name}", "/users/#{user.id}" %></li>
         <% end %>
       </ul>
     </div>

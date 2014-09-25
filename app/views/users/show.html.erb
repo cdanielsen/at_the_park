@@ -41,7 +41,7 @@
   <div class="col-md-4 col-md-offset-2">
     <h2>And their dogs...</h2>
     <ul><% @user.dogs.each do |dog| %>
-      <li class="object-list"><%= image_tag dog.headshot.url(:tiny) %><%= link_to dog.name, user_dog_path(@user, dog) %></li>
+      <li class="object-list"><%= image_tag dog.headshot.url(:tiny), class: "img-circle" %><%= link_to dog.name, user_dog_path(@user, dog) %></li>
       <% end %>
     </ul>
   </div>
