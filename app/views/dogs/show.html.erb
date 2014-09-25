@@ -1,6 +1,7 @@
 <% content_for(:title, "#{@dog.name} | @ThePark!") %>
 <div class="row">
   <div class="col-md-4 col-md-offset-1">
+    <%= image_tag @dog.headshot.url(:thumb) %>
     <h2><%= @dog.name %></h2>
     <ul>
       <% if @dog.age != 0 %>

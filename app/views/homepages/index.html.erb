@@ -13,7 +13,7 @@
       <h2>Users</h2>
       <ul>
         <% @users.all.each do |user| %>
-          <li><%= link_to "#{user.name}", "/users/#{user.id}" %></li>
+          <li class="object-list"><%= image_tag user.avatar.url(:tiny) %><%= link_to "#{user.name}", "/users/#{user.id}" %></li>
         <% end %>
       </ul>
     </div>
