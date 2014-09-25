@@ -23,7 +23,7 @@
 
 .header {
   margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
   font-family: 'Permanent Marker', 'cursive';
   font-weight: bold;
   font-size: 80px;
@@ -75,4 +75,15 @@ hr {
   border: 0 none;
   color: #eee;
   height: 2px;
+}
+
+.nav-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-header li {
+  margin: 0 10px;
 }

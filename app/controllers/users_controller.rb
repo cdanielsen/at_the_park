@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
+    @user = User.new(user_params)
     if @user.save
       flash[:notice] = "New User '#{@user.name}' created!"
       redirect_to '/'
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update(params[:user])
+    if @user.update(user_params)
       flash[:notice] = "#{@user.name} updated successfully!"
       redirect_to "/users/#{@user.id}"
     else
@@ -49,4 +49,6 @@ class UsersController < ApplicationController
   end
 end
 
-# refactor to use strong params!
+def user_params
+  params.require(:user).permit(:name, :age, :gender, :avatar)
+end

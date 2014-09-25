@@ -4,20 +4,11 @@
   <div class = "col-md-4">
     <h2>Create new user</h2>
     <%= render('layouts/errors', :object => @user) %>
-    <form action="/users" role="form" method="post">
-      <div class="form-group">
-        <label for="user_name">Name (required)</label>
-        <input id="user_name" class="form-control" name="user[name]" type="text" value="<%= @user.name %>">
-      </div>
-      <div class="form-group">
-        <label for="user_gender">Gender (optional)</label>
-        <input id="user_gender" class="form-control" name="user[gender]" type="text" value="<%= @user.gender %>">
-      </div>
-      <div class="form-group">
-        <label for="user_age">Age (optional)</label>
-        <input id="user_age" class="form-control" name="user[age]" type="text" value="<%= @user.age %>">
-      </div>
-      <button type="submit" class="btn btn-primary">Create user</button>
-    </div>
+    <%= render('form') %>
   </div>
 </div>
+
+
+
+
+
