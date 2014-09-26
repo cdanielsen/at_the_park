@@ -21,17 +21,13 @@
     <p><%= link_to "Update Profile", edit_user_registration_path, class: "btn btn-primary" %>
     <p><%= link_to "Add new dog", new_user_dog_path(@user), class: "btn btn-info" %></p><br/>
     <h2>Check In @</h2>
-    <form role="form" action="/visits", method="post">
-      <div class="form-group">
-        <select name="visit[park_id]" class="form-control">
-          <% @parks.each do |park| %>
-            <option value="<%= park.id %>" class="form-control"><%= park.name %></option>
-          <% end %>
-        </select>
-        <input type="hidden" name="visit[user_id]" value="<%= @user.id %>"><br/>
-        <button type="submit" class="btn btn-info">Check-in!</button>
-      </div>
-    </form>
+      <%= form_for @visit do |f| %>
+        <div class="form-group">
+          <%= f.collection_select :park_id, @parks, :id, :name, {}, {class: "form-control"} %>
+        </div>
+          <%= f.submit "Check-in!", class: "btn btn-primary" %>
+      <% end %>
+
   </div>
   <div class="col-md-5 col-md-offset-2">
     <h2>And their dog(s)...</h2>

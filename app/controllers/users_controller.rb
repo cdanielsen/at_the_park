@@ -9,6 +9,7 @@ before_action :authenticate_user!
   def show
     @user = User.find(params[:id])
     @parks = Park.all
+    @visit = Visit.new
   end
 
 end
