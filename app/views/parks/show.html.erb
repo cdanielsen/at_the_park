@@ -16,12 +16,11 @@
       <% end %>
     </ul>
 
-    <p><a href="/parks/<%= @park.id %>/edit" class="btn btn-primary">Edit Park</a></p>
-    <p><a href="/parks/<%= @park.id %>"
-          data-confirm="You're about to delete a park! Are you sure?"
-          data-method="delete"
-          rel="nofollow"
-          class="btn btn-danger">Delete Park</a></p>
+    <p><%= link_to "Edit Park", edit_park_path(@park), class: "btn btn-primary" %>
+    <p><%= link_to "Delete Park", park_path(@park), data: { confirm: "You're about to delete a park! Are you sure?",
+                                                            method: "delete"},
+                                                            class: "btn btn-danger" %>
+
   </div>
   <div class='col-md-4'>
     <h2>Who's there?</h2>

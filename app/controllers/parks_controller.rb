@@ -3,12 +3,10 @@ class ParksController < ApplicationController
   def index
     @parks = Park.all
     @users = User.all
-    render 'parks/index'
   end
 
   def new
     @park = Park.new
-    render 'parks/new'
   end
 
   def create
@@ -17,19 +15,17 @@ class ParksController < ApplicationController
       flash[:notice] = "New Park '#{@park.name}' created!"
       redirect_to '/parks'
     else
-      render 'parks/new'
+      render new_park_path
     end
   end
 
   def show
     @visits = Visit.park_visits(params[:id])
     @park = Park.find(params[:id])
-    render 'parks/show'
   end
 
   def edit
     @park = Park.find(params[:id])
-    render 'parks/edit'
   end
 
   def update
@@ -38,7 +34,7 @@ class ParksController < ApplicationController
       flash[:notice] = "#{@park.name} updated successfully!"
       redirect_to "/parks/#{@park.id}"
     else
-      render 'parks/edit'
+      render edit_park_path
     end
   end
 

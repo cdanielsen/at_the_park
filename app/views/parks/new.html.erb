@@ -4,26 +4,6 @@
   <div class = "col-md-4">
     <h2>Create park</h2>
     <%= render('layouts/errors', :object => @park) %>
-    <form action="/parks" role="form" method="post">
-      <div class="form-group">
-        <label for="park_name">Name (required)</label>
-        <input id="park_name" class="form-control" name="park[name]" type="text" value="<%= @park.name %>">
-      </div>
-      <div class="form-group">
-        <label for="park_location">Location (required)</label>
-        <input id="park_location" class="form-control" name="park[location]" type="text" value="<%= @park.location %>">
-      </div>
-      <div class="form-group">
-        <label for="park_off_leash">Off Leash</label>
-        <input name="park[off_leash]" type="hidden" value="0">
-        <input id="park_off_leash" name="park[off_leash]" type="checkbox" value="1">
-      </div>
-      <div class="form-group">
-        <label for="park_fenced">Fenced Area</label>
-        <input name="park[fenced]" type="hidden" value="0">
-        <input id="park_fenced" name="park[fenced]" type="checkbox" value="1">
-      </div>
-      <button type="submit" class="btn btn-primary">Create park</button>
-    </form>
+    <%= render('form') %>
   </div>
 </div>

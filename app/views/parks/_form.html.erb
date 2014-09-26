@@ -1,0 +1,21 @@
+<%= form_for @park do |f| %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :location %>
+      <%= f.text_field :location, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :off_leash %>
+      <%= f.check_box :off_leash, {}, checked_value = "1", unchecked_value = "0" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :fenced %>
+      <%= f.check_box :fenced, {}, checked_value = "1", unchecked_value = "0" %>
+    </div>
+    <div class="form-group">
+      <%= f.submit(class: "btn btn-primary") %>
+    </div>
+  <% end %>

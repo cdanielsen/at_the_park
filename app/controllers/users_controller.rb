@@ -4,12 +4,10 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    render 'users/index'
   end
 
   def new
     @user = User.new
-    render 'users/new'
   end
 
   def create
@@ -18,19 +16,17 @@ class UsersController < ApplicationController
       flash[:notice] = "New User '#{@user.name}' created!"
       redirect_to '/'
     else
-      render 'users/new'
+      render new_user_path
     end
   end
 
   def show
     @user = User.find(params[:id])
     @parks = Park.all
-    render 'users/show'
   end
 
   def edit
     @user = User.find(params[:id])
-    render 'users/edit'
   end
 
   def update
@@ -39,7 +35,7 @@ class UsersController < ApplicationController
       flash[:notice] = "#{@user.name} updated successfully!"
       redirect_to "/users/#{@user.id}"
     else
-      render 'users/edit'
+      render edit_user_path
     end
   end
 

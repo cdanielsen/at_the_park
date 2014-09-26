@@ -4,6 +4,5 @@ class HomepagesController < ApplicationController
     @users = User.all
     @parks = Park.all
     @visits = Visit.all
-    render 'homepages/index'
   end
 end
