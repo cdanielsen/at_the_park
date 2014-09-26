@@ -10,7 +10,7 @@
       <% else %>
         <li>Not given</li>
       <% end %>
-      <% if !@user.gender.empty? %>
+      <% if !@user.gender.nil? %>
         <li><%= @user.gender %></li>
       <% else %>
         <li>Not given</li>
