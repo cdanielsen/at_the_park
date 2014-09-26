@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 
   has_many :visits
   has_many :parks, through: :visits
-  has_many :dogs
+  has_many :dogs, dependent: :destroy
 
   before_save :prettify_names
 
