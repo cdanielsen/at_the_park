@@ -83,8 +83,8 @@ Rails.application.configure do
   Paperclip.options[:command_path] = "/usr/bin/convert"
   config.paperclip_defaults = {
     :storage => :s3,
+    :bucket => ENV['at-the-park-bucket'],
     :s3_credentials => {
-      :bucket => ENV['at-the-park-bucket'],
       :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
       :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     }
