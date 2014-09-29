@@ -31,6 +31,11 @@ GEM
     arel (5.0.1.20140414130214)
     autoprefixer-rails (3.0.0.20140821)
       execjs
+    aws-sdk (1.54.0)
+      aws-sdk-v1 (= 1.54.0)
+    aws-sdk-v1 (1.54.0)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
     bcrypt (3.1.7)
     better_errors (2.0.0)
       coderay (>= 1.0.0)
@@ -182,6 +187,7 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails
+  aws-sdk
   better_errors
   binding_of_caller
   bootstrap-sass
