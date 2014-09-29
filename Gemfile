@@ -20,12 +20,14 @@ end
 
 group :test, :development do
   gem 'rspec-rails'
+  gem 'poltergeist'
+  gem 'capybara'
+  gem 'database_cleaner'
 end
 
 group :test do
   gem 'pry'
   gem 'shoulda-matchers'
-  gem 'capybara'
   gem 'launchy'
 end
 

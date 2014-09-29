@@ -24,14 +24,18 @@
   </div>
   <div class='col-md-4'>
     <h2>Who's there?</h2>
+    <p><h2>Dogs</h2></p>
       <ul>
         <% @visits.each do |visit| %>
           <% visit.user.dogs.each do |dog| %>
             <li><%= link_to dog.name, user_dog_path(dog.user, dog) %></li>
           <% end %>
-          <li><h4>(with human)</h4></li>
-          <li><%= link_to visit.user.name, user_path(visit.user) %> @ <%= visit.user.created_at.strftime("%H:%M") %></li>
-          <hr>
+        <% end %>
+      </ul>
+    <h4>Humans</h4>
+      <ul>
+        <% @visits.each do |visit| %>
+            <li><%= link_to visit.user.name, user_path(visit.user) %></li>
         <% end %>
       </ul>
   </div>
