@@ -43,7 +43,7 @@ class DogsController < ApplicationController
     @dog = Dog.find(params[:id])
     @dog.destroy
     flash[:alert] = "#{@dog.name} is no more =("
-    redirect_to user_dog_path(@user, @dog)
+    redirect_to user_path(@user)
   end
 
 private
