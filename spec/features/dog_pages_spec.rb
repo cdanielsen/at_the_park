@@ -31,7 +31,6 @@ describe "the update process for dogs" do
     click_on "Create Dog"
     click_on "Walter"
     click_on "Delete dog"
-    click_on "Ok"
     expect(page).to have_content "no more"
   end
 end
