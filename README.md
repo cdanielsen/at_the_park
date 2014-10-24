@@ -21,7 +21,9 @@ After cloning repository...
 - Run "rails s" and visit localhost.com/3000
 
 ##WIP Features
-- Integrating dogs model into app
-- Front-end styling
+- User authorization/roles
+- "Check out" feature
+- Automatically check people out of a park after one hour
+- Style overhaul
 
 Copyright MIT
