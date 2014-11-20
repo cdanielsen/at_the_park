@@ -46,6 +46,7 @@ GEM
     bootstrap-sass (3.2.0.1)
       sass (~> 3.2)
     builder (3.2.2)
+    cancancan (1.9.2)
     capybara (2.4.3)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -199,6 +200,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass
+  cancancan
   capybara
   coffee-rails
   database_cleaner

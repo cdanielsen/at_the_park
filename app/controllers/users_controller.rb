@@ -12,4 +12,10 @@ before_action :authenticate_user!
     @visit = Visit.new
   end
 
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    flash[:alert] = "#{@user.name} has been deleted"
+    redirect_to "/"
+  end
 end

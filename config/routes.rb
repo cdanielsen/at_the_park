@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   match('signup', {via: :get, to: 'users#new'})
 
   resources :parks
-  resources :users, only: [:index, :show] do
+  resources :users, only: [:index, :show, :destroy] do
     resources :dogs, except: :index
   end
 end

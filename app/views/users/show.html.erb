@@ -18,7 +18,12 @@
     </ul>
 
     <p><%= link_to "Update Profile", edit_user_registration_path, class: "btn btn-primary" %>
-    <p><%= link_to "Add new dog", new_user_dog_path(@user), class: "btn btn-info" %></p>
+    <p><%= link_to "Add new dog", new_user_dog_path(@user), class: "btn btn-info" %>
+    <% if can? :destroy, @user %>
+      <%= link_to "Delete", user_path(@user), data: { confirm: "You're about to delete a user! Are you sure?",
+                                                                        method: "delete"},
+                                                                class: "btn btn-danger" %>
+    <% end %>
     <h2>Check In @</h2>
       <%= form_for @visit do |f| %>
         <div class="form-group">

@@ -11,6 +11,7 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'paperclip'
 gem 'devise'
+gem 'cancancan'
 
 group :development do
   gem 'better_errors'
