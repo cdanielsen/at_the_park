@@ -1,8 +1,7 @@
 <% content_for(:title, "Home | @ThePark!") %>
 <div class='container'>
   <div class="row">
-    <div class='col-md-3 col-md-offset-3'>
-      <h2>Parks</h2>
+    <div class='col-md-4 col-md-offset-2'>
       <ul>
         <% @parks.all.each do |park| %>
           <li><%= link_to "#{park.name}", "/parks/#{park.id}" %></li>
@@ -13,10 +12,17 @@
       <% end %>
     </div>
     <div class='col-md-6'>
-      <h2>Users</h2>
-      <ul>
+      <h2></h2>
+      <ul class="circle-grid">
         <% @users.all.each do |user| %>
-          <li class="object-list"><%= link_to( image_tag(user.avatar.url(:tiny)), user_path(user), class: 'img-circle') %><%= link_to "#{user.name}", "/users/#{user.id}" %></li>
+          <li><%= link_to(image_tag(user.avatar.url(:teeny), class: 'img-circle'), user_path(user)) %></li>
+        <% end %>
+      </ul>
+      <ul class="circle-grid">
+        <% @users.all.each do |user| %>
+          <% user.dogs.each do |dog| %>
+            <li><%= link_to(image_tag(dog.headshot.url(:teeny), class: 'img-circle'), user_dog_path(user, dog)) %></li>
+          <% end %>
         <% end %>
       </ul>
     </div>
